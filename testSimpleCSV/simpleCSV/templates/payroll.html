@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Payroll-Display</title>
+  </head>
+  <body>
+
+    <h1>Payroll List</h1>
+
+    <table style="width:100%">
+      <tr>
+        <th>Date</th>
+        <th>Hours Worked</th>
+        <th>Employee ID</th>
+        <th>Job Group</th>
+      </tr>
+      {% for workschedule in workschedules %}
+      <tr>
+        <td>{{workschedule.date}}</td>
+        <td>{{workschedule.hoursworked}}</td>
+        <td>{{workschedule.employeeid}}</td>
+        <td>{{workschedule.jobgroup}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <table style="width:100%">
+      <tr>
+        <th>Date</th>
+        <th>Hours Worked</th>
+        <th>Job Group</th>
+      </tr>
+      {% for info in workInfo %}
+      <tr>
+        <td>{{info}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+
+    <p>{{employeeID}}</p>
+    <p>{{workInfo}}</p>
+    <p>{{salary}}</p>
+    <p>{{month}}</p>
+    <p>{{monthPerID}}</p>
+    <p>{{realMonth}}</p>
+    <p>{{hourse_jobgroup}}</p>
+    <p>{{answer}}</p>
+
+  </body>
+</html>
