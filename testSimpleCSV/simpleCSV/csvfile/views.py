@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Workschedule
 from django.db import connection
 from .models import sql_cursor
+from .models import Payroll
 
 # Create your views here.
 
@@ -13,6 +14,7 @@ def workschedule_upload(request):
     # declaring template
     template = "workschedule_upload.html"
     data = Workschedule.objects.all()
+
 
     # prompt is a context variable that can have different
     # values depending on their context
@@ -50,23 +52,19 @@ def workschedule_upload(request):
     # declaring a new template for displaying Payroll
     template_payroll = "payroll.html"
 
-    employeeID, workInfo, salary, allMonthPerID, realMonth, hourse_jobgroup, answer = sql_cursor()
+    employeeID, years, payment, answer = sql_cursor()
 
-    for monthPerID in allMonthPerID: # for each ID
-        for monthDate in monthPerID:  # for each date of the ID
-            month = monthDate[0].month
+    payroll = Payroll.objects.all()
+
 
     return render(
             request,
             template_payroll,
             {'workschedules': data,
+            'payrolls': payroll,
             'employeeID': employeeID,
-            'workInfo': workInfo[0][0],
-            'salary': salary,
-            'month': allMonthPerID[0][4][0],
-            'monthPerID': month,
-            'realMonth': realMonth,
-            'hourse_jobgroup': hourse_jobgroup,
+            'years': years,
+            'payment': payment,
             'answer': answer,
             }
         )

@@ -25,30 +25,30 @@
       {% endfor %}
     </table>
 
+
     <table style="width:100%">
       <tr>
-        <th>Date</th>
-        <th>Hours Worked</th>
-        <th>Job Group</th>
+        <th>Employee ID</th>
+        <th>Pay Period</th>
+        <th>Amount Paid</th>
       </tr>
-      {% for info in workInfo %}
+      {% for payrolls in object_list %}
       <tr>
-        <td>{{info}}</td>
-        <td></td>
-        <td></td>
+        <td>{{payrolls.employeeid}}</td>
+        <td>{{payrolls.payperiod}}</td>
+        <td>{{payrolls.amountpaid}}</td>
       </tr>
       {% endfor %}
     </table>
 
+    {% for payrolls in object_list %}
+    <p>{{payrolls.employeeid}}</p>
+    {% endfor %}
 
-    <p>{{employeeID}}</p>
-    <p>{{workInfo}}</p>
-    <p>{{salary}}</p>
-    <p>{{month}}</p>
-    <p>{{monthPerID}}</p>
-    <p>{{realMonth}}</p>
-    <p>{{hourse_jobgroup}}</p>
-    <p>{{answer}}</p>
+    <p>All Employees: {{employeeID}}</p>
+    <p>All years: {{years}}</p>
+    <p>All payment: {{payment}}</p>
+    <p>Testing: {{answer}}</p>
 
   </body>
 </html>
