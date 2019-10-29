@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>payroll-list</title>
+  </head>
+  <body>
+    <h1>Payroll List</h1>
+    <ul>
+      {% for payroll in object_list %}
+      <li>{{payroll.employeeid}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

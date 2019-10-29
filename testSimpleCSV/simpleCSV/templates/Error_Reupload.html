@@ -5,8 +5,7 @@
     <title>Payroll-Challenge</title>
   </head>
   <body>
-    <h1>Main Page</h1>
-    {% if messages %}
+    <!--{% if messages %}
       {% for message in messages %}
         <div>
           <strong>{{message|safe}}</strong>
@@ -22,6 +21,10 @@
         <button type="submit">Upload</button>
       </form>
     {% endif %}
+  -->
+    <p>Report {{reportid}} has been uploaded before. The upload just now was unsuccessful!</p>
+    <p>Go back to main page</p>
+    <button onclick="window.location.href='workschedule_upload.html';">Main Page</button>
 
   </body>
 </html>

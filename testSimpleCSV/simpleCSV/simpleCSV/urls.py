@@ -19,8 +19,11 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from csvfile.views import workschedule_upload
+#from csvfile.views import PayrollListView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^upload-csv/', workschedule_upload, name="workschedule_upload"),
+    #url(r'^payroll/',PayrollListView.as_view(), name="payroll-list"),
+    #url(r'^error_reupload/',PayrollListView.as_view(), name="payroll-list"),
 ]

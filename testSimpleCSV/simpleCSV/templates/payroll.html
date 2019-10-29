@@ -3,11 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Payroll-Display</title>
+    <style media="screen">
+      table, th, td{
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
 
     <h1>Payroll List</h1>
 
+    <br><br>
+
+    <button onclick="window.location.href='workschedule_upload.html';">Main Page</button>
+
+    <br><br>
+
+    <h3>Payroll Table:</h3>
+    <table style="width:100%">
+      <tr>
+        <th>Employee ID</th>
+        <th>Pay Period</th>
+        <th>Amount Paid</th>
+      </tr>
+      {% for row in payrolllist %}
+      <tr>
+        <td>{{row.employeeid}}</td>
+        <td>{{row.payperiod}}</td>
+        <td>{{row.amountpaid}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  <!--
+    <h3>Database Table:</h3>
     <table style="width:100%">
       <tr>
         <th>Date</th>
@@ -26,29 +55,13 @@
     </table>
 
 
-    <table style="width:100%">
-      <tr>
-        <th>Employee ID</th>
-        <th>Pay Period</th>
-        <th>Amount Paid</th>
-      </tr>
-      {% for payrolls in object_list %}
-      <tr>
-        <td>{{payrolls.employeeid}}</td>
-        <td>{{payrolls.payperiod}}</td>
-        <td>{{payrolls.amountpaid}}</td>
-      </tr>
-      {% endfor %}
-    </table>
 
-    {% for payrolls in object_list %}
-    <p>{{payrolls.employeeid}}</p>
-    {% endfor %}
 
     <p>All Employees: {{employeeID}}</p>
     <p>All years: {{years}}</p>
     <p>All payment: {{payment}}</p>
     <p>Testing: {{answer}}</p>
-
+  -->
+  
   </body>
 </html>
